@@ -1,9 +1,17 @@
-package com.bidindia.bidindia;
+package com.bidindia.bidindia.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.bidindia.bidindia.POJO.BidItem;
+import com.bidindia.bidindia.R;
+import com.bidindia.bidindia.adapters.BidListAdapter;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        RecyclerView rvBidList = (RecyclerView) findViewById(R.id.rv_bid_list);
+        rvBidList.setLayoutManager(new LinearLayoutManager(this));
+
+        ArrayList<BidItem> bidItemList = new ArrayList<>(5);
+        BidListAdapter adapter = new BidListAdapter(this, bidItemList);
+        rvBidList.setAdapter(adapter);
     }
 
     @Override

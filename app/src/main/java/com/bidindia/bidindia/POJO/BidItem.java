@@ -8,8 +8,20 @@ public class BidItem {
     private int bidAmount;
     private int bidPrice;
     private int currentNoOfBids;
+    private String title;
     private String description;
     private String fivePointDescription;
+
+    public BidItem() {
+    }
+
+    public BidItem(int amount, int bidPrice, int currentNoOfBids, String title, String des, String fpDesc) {
+        this.bidAmount = amount;
+        this.bidPrice = bidPrice;
+        this.currentNoOfBids = currentNoOfBids;
+        this.description = des;
+        this.fivePointDescription = fpDesc;
+    }
 
     public int getBidAmount() {
         return bidAmount;
@@ -49,5 +61,13 @@ public class BidItem {
 
     public void setFivePointDescription(String fivePointDescription) {
         this.fivePointDescription = fivePointDescription;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

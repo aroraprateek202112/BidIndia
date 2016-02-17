@@ -4,10 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
@@ -15,17 +11,9 @@
     <!--app:layout_behaviour is used for Coordinator layout from the Material Design support library
     If we are actually using CoordinatorLayout and want the cooperative scrolling behaviors-->
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rv_bid_list"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="49dp" />
+        android:id="@+id/rv_bid_list" />
 
 </RelativeLayout>

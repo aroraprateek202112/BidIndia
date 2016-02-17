@@ -56,7 +56,10 @@ public class MainActivity extends AppCompatActivity
         RecyclerView rvBidList = (RecyclerView) findViewById(R.id.rv_bid_list);
         rvBidList.setLayoutManager(new LinearLayoutManager(this));
 
-        ArrayList<BidItem> bidItemList = new ArrayList<>(5);
+        ArrayList<BidItem> bidItemList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            bidItemList.add(new BidItem(100, 1, 20, "PayTm 100","PayTm Cash 100", "fp Description"));
+        }
         BidListAdapter adapter = new BidListAdapter(this, bidItemList);
         rvBidList.setAdapter(adapter);
     }

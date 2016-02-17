@@ -41,6 +41,15 @@ public class BidListAdapter extends RecyclerView.Adapter<BidListAdapter.BidItemV
     @Override
     public void onBindViewHolder(BidItemViewHolder holder, int position) {
 
+        bindItem(holder, mBidItemList.get(position));
+
+    }
+
+    private void bindItem(BidItemViewHolder holder, BidItem bidItem) {
+        holder.tvTitle.setText(bidItem.getTitle());
+        holder.tvDescription.setText(bidItem.getDescription());
+        holder.tvFivePointDescription.setText(bidItem.getFivePointDescription());
+        holder.tvBidCost.setText(bidItem.getBidPrice());
     }
 
     @Override
@@ -54,7 +63,7 @@ public class BidListAdapter extends RecyclerView.Adapter<BidListAdapter.BidItemV
         private final TextView tvTitle;
         private final TextView tvDescription;
         private final TextView tvFivePointDescription;
-        private final TextView tvPriceAmount;
+        private final TextView tvBidCost;
         private final Spinner spQuantity;
         private final Button btnBid;
 
@@ -64,7 +73,7 @@ public class BidListAdapter extends RecyclerView.Adapter<BidListAdapter.BidItemV
             tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
             tvDescription = (TextView) itemView.findViewById(R.id.tv_description);
             tvFivePointDescription = (TextView) itemView.findViewById(R.id.tv_five_point_description);
-            tvPriceAmount = (TextView) itemView.findViewById(R.id.tv_price_amount);
+            tvBidCost = (TextView) itemView.findViewById(R.id.tv_price_amount);
             spQuantity = (Spinner) itemView.findViewById(R.id.sp_quantity);
             btnBid = (Button) itemView.findViewById(R.id.btn_bid);
         }

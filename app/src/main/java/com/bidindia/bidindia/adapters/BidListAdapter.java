@@ -2,12 +2,14 @@ package com.bidindia.bidindia.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bidindia.bidindia.POJO.BidItem;
 import com.bidindia.bidindia.R;
@@ -58,7 +60,7 @@ public class BidListAdapter extends RecyclerView.Adapter<BidListAdapter.BidItemV
     }
 
 
-    public static class BidItemViewHolder extends RecyclerView.ViewHolder {
+    protected static class BidItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private final TextView tvTitle;
         private final TextView tvDescription;
@@ -76,6 +78,17 @@ public class BidListAdapter extends RecyclerView.Adapter<BidListAdapter.BidItemV
             tvBidCost = (TextView) itemView.findViewById(R.id.tv_price_amount);
             spQuantity = (Spinner) itemView.findViewById(R.id.sp_quantity);
             btnBid = (Button) itemView.findViewById(R.id.btn_bid);
+
+            btnBid.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            if (view.getId() == R.id.btn_bid) {
+                int quantity = spQuantity.getSelectedItemPosition() + 1; // qunatity = selectedItemPosition + 1 (Since arrary start from 0 index)
+
+            }
         }
     }
 }

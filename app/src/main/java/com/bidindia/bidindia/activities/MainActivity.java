@@ -57,9 +57,11 @@ public class MainActivity extends AppCompatActivity
         rvBidList.setLayoutManager(new LinearLayoutManager(this));
 
         ArrayList<BidItem> bidItemList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            bidItemList.add(new BidItem(100, 1, 20, "PayTm 100","PayTm Cash 100", "fp Description"));
-        }
+        bidItemList.add(new BidItem(100, 20, "PayTm Cash 100", "fp Description"));
+        bidItemList.add(new BidItem(200, 30, "PayTm Cash 200", "fp Description"));
+        bidItemList.add(new BidItem(300, 50, "PayTm Cash 300", "fp Description"));
+        bidItemList.add(new BidItem(400, 70, "PayTm Cash 400", "fp Description"));
+        bidItemList.add(new BidItem(500, 5, "PayTm Cash 500", "fp Description"));
         BidListAdapter adapter = new BidListAdapter(this, bidItemList);
         rvBidList.setAdapter(adapter);
     }

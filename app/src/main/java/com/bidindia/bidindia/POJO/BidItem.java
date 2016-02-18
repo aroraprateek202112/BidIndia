@@ -5,7 +5,7 @@ package com.bidindia.bidindia.POJO;
  */
 public class BidItem {
 
-    private int bidAmount;
+    private int bidWiningAmount;
     private int bidPrice;
     private int currentNoOfBids;
     private String title;
@@ -15,29 +15,29 @@ public class BidItem {
     public BidItem() {
     }
 
-    public BidItem(int amount, int bidPrice, int currentNoOfBids, String title, String des, String fpDesc) {
-        this.bidAmount = amount;
+    public BidItem(int bidWiningAmount, int currentNoOfBids, String des, String fpDesc) {
+        this.bidWiningAmount = bidWiningAmount;
         this.bidPrice = bidPrice;
         this.currentNoOfBids = currentNoOfBids;
         this.description = des;
         this.fivePointDescription = fpDesc;
     }
 
-    public int getBidAmount() {
-        return bidAmount;
+    public int getBidWiningAmount() {
+        return bidWiningAmount;
     }
 
-    public void setBidAmount(int bidAmount) {
-        this.bidAmount = bidAmount;
+    public void setBidWiningAmount(int bidWiningAmount) {
+        this.bidWiningAmount = bidWiningAmount;
     }
 
     public int getBidPrice() {
-        return bidPrice;
+        return bidWiningAmount/100;
     }
 
-    public void setBidPrice(int bidPrice) {
-        this.bidPrice = bidPrice;
-    }
+//    public void setBidPrice(int bidPrice) {
+//        this.bidPrice = bidPrice;
+//    }
 
     public int getCurrentNoOfBids() {
         return currentNoOfBids;
@@ -64,10 +64,10 @@ public class BidItem {
     }
 
     public String getTitle() {
-        return title;
+        return "PayTm "+bidWiningAmount;
     }
 
-    public void setTitle(String title) {
+    /*public void setTitle(String title) {
         this.title = title;
-    }
+    }*/
 }

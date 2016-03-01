@@ -51,7 +51,7 @@ public class BidListAdapter extends RecyclerView.Adapter<BidListAdapter.BidItemV
         holder.tvTitle.setText(bidItem.getTitle());
         holder.tvDescription.setText(bidItem.getDescription());
         holder.tvFivePointDescription.setText(bidItem.getFivePointDescription());
-        holder.tvBidCost.setText("PayTm Cash " + bidItem.getBidPrice());
+        holder.tvBidCost.setText("" + bidItem.getBidPrice() + " (PayTm Cash)");
     }
 
     @Override
